@@ -1,0 +1,86 @@
+.contact__card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: relative;
+  padding: 2rem 1rem;
+  margin-top: 1rem;
+  background-color: white;
+  box-shadow: 1px 1px #e0e0e0;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+  }
+
+  .contact__card--image {
+    clip-path: circle(50%);
+  }
+  .contact__card--text-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 1rem;
+  }
+  .contact__card--name-text {
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+    color: #f77062;
+  }
+  .contact__card--location-text {
+    font-size: 1rem;
+    color: #878787;
+    max-width: 80%;
+  }
+  .contact__card--expand-arrow {
+    position: absolute;
+    right: 0.5rem;
+    font-size: 2rem;
+    color: #e0e0e0;
+  }
+}
+
+.contact__card_bottom {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  color: white;
+  background: #f77062;
+  background: linear-gradient(270deg, #f77062 0%, #fe5196 100%);
+  box-shadow: 1px 1px 2px 0 #e0e0e0;
+  margin: 0 auto;
+  width: 95%;
+  transition: transform 0.3s, height 0.3s, visibility 0.1s;
+
+  a {
+    color: white;
+  }
+
+  .contact__card_bottom--left,
+  .contact__card_bottom--right {
+    flex: 1;
+    padding: 1.5rem 0;
+  }
+  .contact__card_bottom--right {
+    border-left: 1px solid rgba(224, 224, 224, 0.3);
+  }
+  .contact__card_bottom--phone-title,
+  .contact__card_bottom--email-title {
+    font-size: 0.9rem;
+    padding-bottom: 0.25rem;
+  }
+  .contact__card_bottom--phone-copy,
+  .contact__card_bottom--email-copy {
+    font-size: 0.75rem;
+  }
+}

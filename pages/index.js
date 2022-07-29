@@ -1,23 +1,37 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Head from "next/head";
+import Header from "@components/Header";
+import Contact from "@components/Contact";
 
-export default function Home() {
+export default function Home({ users }) {
   return (
-    <div className="container">
+    <div>
       <Head>
-        <title>Next.js Starter!</title>
+        <title>TAG FE Assessment</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <Header title="Our Team" />
+        <ul style={{ width: "90%" }}>
+          {users.map((user, key) => (
+            <li key={key}>
+              <Contact user={user} />
+            </li>
+          ))}
+        </ul>
       </main>
-
-      <Footer />
     </div>
-  )
+  );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("https://randomuser.me/api/?results=5");
+  const userResults = await res.json();
+  const users = userResults.results;
+
+  return {
+    props: {
+      users,
+    },
+  };
 }
